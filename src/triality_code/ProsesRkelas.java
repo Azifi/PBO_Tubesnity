@@ -5,12 +5,139 @@ import java.util.Scanner;
 public class ProsesRkelas extends RuangKelas {
 	Scanner sir = new Scanner(System.in);
 	
+	String IdentifiRkelas(){
+		System.out.print("Nama Ruang 	: ");
+		setNamaRuang(sir.nextLine());
+		System.out.print("Lokasi 		: ");
+		setLokasi(sir.nextLine());
+		System.out.print("Fakultas 		: ");
+		setFakultas(sir.nextLine());
+		System.out.print("Program Studi 	: ");
+		setProdi(sir.nextLine());
+		return null;
+	}
+	String KondisiRkelas(){
+		System.out.print("Panjang Ruang : ");
+		setPanjang(sir.nextDouble());
+		System.out.print("Lebar Ruang : ");
+		setLebar(sir.nextDouble());
+		//System.out.print("Jumlah Pintu : ");
+		//setJumlahPintu(sir.nextDouble());
+		//System.out.print("Jumlah Jendela : ");
+		//setJumlahJendela(sir.nextDouble());
+		System.out.print("Jumlah Kursi : ");
+		setJumlahKursi(sir.nextInt());
+		//System.out.print("Jumlah Kabel LCD : ");
+		//setJmlKabelLCD(sir.nextDouble());
+		//System.out.print("Jumlah Lampu : ");
+		//setJumlahLampu(sir.nextDouble());
+		System.out.print("Jumlah AC : ");
+		setJumlahAC(sir.nextInt());
+		return null;
+		
+	}
 	double HitungLuas(){
 		return getPanjang()*getLebar(); 
 	}
 	double HitungRasio() {
 		return HitungLuas() / getJumlahKursi();
 	} 
+	
+	String analisis_pintu_dan_jendela(){
+		System.out.println("\n\nAnalisis Pintu dan Jendela");
+		System.out.print("-----------------------------------");
+		System.out.print("\nMasukkan Jumlah Pintu : ");
+		setJumlahPintu(sir.nextInt());
+		System.out.print("\nMasukkan Jumlah Jendela : ");
+		setJumlahJendela(sir.nextInt());
+		if(getJumlahPintu() >=2 && getJumlahJendela() >=1){
+			System.out.print("-----------------------------------------");
+			System.out.print("\nJumlah Pintu = "+getJumlahPintu());
+			System.out.print("\nJumlah Jendela = "+getJumlahJendela());
+			System.out.print("\nKriteria Sesuai");
+			System.out.print("\n-----------------------------------------");
+		} else {
+			System.out.print("\n-----------------------------------------");
+			System.out.print("\nKriteria Tidak Sesuai");
+			System.out.print("\n-----------------------------------------");
+		}
+		return null;
+	}
+	
+	String analisis_kelistrikan(){
+		System.out.print("\n\nAnalisis Kelistrikan");
+		System.out.print("\n-----------------------------------------------");
+		System.out.print("\nMasukkan Jumlah stop kontak : ");
+		setJumlahSteker(sir.nextInt());
+		System.out.print("Masukkan Kondisi stop kontak : ");
+		setKondisiSteker(sir.next());
+		System.out.print("Masukkan Posisi stop kontak : \n");
+		setPosisiSteker(sir.next());
+		
+		if((getJumlahSteker()>=4) && (getPosisiSteker().equals("pojok")) || (getPosisiSteker().equals("samping")) && getKondisiKblLCD().equals("berfungsi")){
+			System.out.print("-----------------------------------------------------");
+			System.out.println("\nJumlah stop kontak : "+getJumlahSteker());
+			System.out.println("\nKondisi stop kontak : "+getKondisiSteker());
+			System.out.println("\nPosisi stop kontak : "+getPosisiSteker());
+			System.out.println("\nKriteria Sesuai");
+			System.out.println("\n-----------------------------------------------------");
+		} else{
+			System.out.println("\n-----------------------------------------------------");
+			System.out.println("\nKriteria Tidak Sesuai");
+			System.out.println("\n-----------------------------------------------------");
+		}
+		return null;
+	}
+	
+	String analisis_lcd(){
+		System.out.print("\nAnalisis LCD");
+		System.out.print("\n------------------------------------------------------");
+		System.out.print("\nMasukkan Jumlah Kabel LCD : ");
+		setJmlKabelLCD(sir.nextInt());
+		System.out.print("Masukkan Kondisi Kabel LCD : ");
+		setKondisiKblLCD(sir.next());
+		System.out.print("Masukkan Posisi : ");
+		setPosisiKblLCD(sir.next());
+		
+		if (getJmlKabelLCD()>=1 && getKondisiKblLCD().equals("berfungsi") && getPosisiKblLCD().equals("depan")){
+			System.out.print("------------------------------------------------");
+			System.out.print("\nJumlah Kabel LCD : "+getJmlKabelLCD());
+			System.out.print("\nKondisi Kabel LCD : "+getKondisiKblLCD());
+			System.out.print("\nPosisi Kabel LCD : "+getPosisiKblLCD());
+			System.out.print("\nKriteria Sesuai");
+			System.out.print("\n------------------------------------------------");
+		} else {
+			System.out.print("\n------------------------------------------------");
+			System.out.print("\nKriteria Tidak Sesuai");
+			System.out.print("\n------------------------------------------------");
+		}
+		return null;
+	}
+	
+	String analisis_lampu(){
+		System.out.print("\nAnalisis Lampu");
+		System.out.print("\n---------------------------------------------------------");
+		System.out.print("\nMasukkan Jumlah Lampu : ");
+		setJumlahLampu(sir.nextInt());
+		System.out.print("Masukkan Kondisi Lampu : ");
+		setKondisiLamp(sir.next());
+		System.out.print("Masukkan Posisi Lampu : ");
+		setPosisiLamp(sir.next());
+		
+		if (getJumlahLampu()>=18 && getKondisiLamp().equalsIgnoreCase("baik") && getPosisiLamp().equals("atap")){
+			System.out.print("--------------------------------------------------");
+			System.out.print("\nJumlah Lampu : "+getJumlahLampu());
+			System.out.print("\nKondisi Lampu : "+getKondisiLamp());
+			System.out.print("\nPosisi Lampu : "+getPosisiLamp());
+			System.out.print("\nKriteria Sesuai");
+			System.out.print("\n-----------------------------------------------------");
+		} else {
+			System.out.println("\n---------------------------------------------------");
+			System.out.println("\nKriteria Tidak Sesuai");
+			System.out.println("\n-------------------------------------------------------");
+		}
+		return null;
+	}
 	String AnalisisKipasAngin(){
 		int nilai = 3;
 		System.out.println("Jumlah Kipas Angin : ");
