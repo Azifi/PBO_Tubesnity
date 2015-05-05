@@ -11,7 +11,7 @@ public class ProsesRkelas extends RuangKelas {
 	double HitungRasio() {
 		return HitungLuas() / getJumlahKursi();
 	} 
-	void AnalisisKipasAngin(){
+	String AnalisisKipasAngin(){
 		int nilai = 3;
 		System.out.println("Jumlah Kipas Angin : ");
 		setJumlahKipas(sir.nextInt());
@@ -34,8 +34,9 @@ public class ProsesRkelas extends RuangKelas {
 		}else{
 			System.out.println("tidak sesuai");
 		}
+		return null;
 	}
-	void AnalisisAC(){
+	String AnalisisAC(){
 		int nilai = 3;
 		System.out.println("Jumlah AC : ");
 		setJumlahAC(sir.nextInt());
@@ -58,8 +59,9 @@ public class ProsesRkelas extends RuangKelas {
 		}else{
 			System.out.println("tidak sesuai");
 		}
+		return null;
 	} 
-	void AnalisisInternet(){
+	String AnalisisInternet(){
 		int nilai = 2;
 		System.out.println("SSID UMM Hotspot  : ");
 		setSSID_UMM(sir.next());
@@ -80,8 +82,9 @@ public class ProsesRkelas extends RuangKelas {
 			System.out.println("tidak sesuai");
 		}
 		System.out.print(getBandwith()+"\n");
+		return null;
 	}
-	void AnalisiCCTV(){
+	String AnalisiCCTV(){
 		int nilai = 3;
 		System.out.println("Jumlah CCTV : ");
 		setJmlCCTV(sir.nextInt());
@@ -104,8 +107,9 @@ public class ProsesRkelas extends RuangKelas {
 		}else{
 			System.out.println("tidak sesuai");
 		}
+		return null;
 	}
-	void AnalisisKebersihan(){
+	String AnalisisKebersihan(){
 		int nilai = 5;
 		System.out.println("Kondisi Lantai : ");
 		setKondisiLante(sir.next());
@@ -138,8 +142,9 @@ public class ProsesRkelas extends RuangKelas {
 		}else{
 			System.out.println("tidak sesuai");
 		}
+		return null;
 	}
-	void AnalisisSirkulasi(){
+	String AnalisisSirkulasi(){
 		System.out.println("Sirkulasi Udara : ");
 		setSirkulaUdara(sir.next());
 		if(getSirkulaUdara().equals("lancar")){
@@ -147,8 +152,9 @@ public class ProsesRkelas extends RuangKelas {
 		}else{
 			System.out.println("tidak sesuai");
 		}
+		return null;
 	}
-	void NilaiPencahayaAn(){
+	String NilaiPencahayaAn(){
 		System.out.println("Pencahayaan : ");
 		setNilaiCahaya(sir.nextInt());
 		if(getNilaiCahaya()>=250&&getNilaiCahaya()<=350){
@@ -156,8 +162,9 @@ public class ProsesRkelas extends RuangKelas {
 		}else{
 			System.out.println("tidak sesuai");
 		}
+		return null;
 	}
-	void Kelembapan(){
+	String Kelembapan(){
 		System.out.println("Kelembapan (%) : ");
 		setKeLembapan(sir.nextInt());
 		if(getKeLembapan()>=70&&getKeLembapan()<=80){
@@ -165,8 +172,9 @@ public class ProsesRkelas extends RuangKelas {
 		}else{
 			System.out.println("tidak sesuai");
 		}
+		return null;
 	}
-	void Sifu(){
+	String Sifu(){
 		System.out.println("Suhu udara : ");
 		setSuhu(sir.nextInt());
 		if(getSuhu()>=25&&getSuhu()<=35){
@@ -174,6 +182,7 @@ public class ProsesRkelas extends RuangKelas {
 		}else{
 			System.out.println("tidak sesuai");
 		}
+		return null;
 	}
 	
 }
