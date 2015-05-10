@@ -68,8 +68,26 @@ void TampilkanSarana(){
 	System.out.println("Posisi CCTV : "+baru.getPosisiCCTV());
 	System.out.println(AnalisCCTV(baru.getJmlCCTV(), baru.getKondisiCCTV(), baru.getPosisiCCTV()));
 	
+	}
 
-}
+	void TampilkanLingkungan(){
+		System.out.println("==================Lingkungan Kelas===============");
+		System.out.println("Kondisi Lantai : "+baru.getKondisiLante());
+		System.out.println("Kondisi Dinding : "+baru.getKondisiDinding());
+		System.out.println("Kondisi Atap : "+baru.getKondisiAtap());
+		System.out.println("Kondisi Pintu : "+baru.getKondisiPintu());
+		System.out.println("Kondisi Jendela : "+baru.getKondisiJendela());
+		System.out.println("=================================================");
+	}
+	
+	void TampilkanKebersihan(){
+		System.out.println("==================Kebersihan Kelas===============");
+		System.out.println("Sirkulasi Udara : "+baru.getSirkulaUdara());
+		System.out.println("Nilai Pencahayaan : "+baru.getNilaiCahaya());
+		System.out.println("Kelembapan (%) : "+baru.getKeLembapan());
+		System.out.println("Suhu (celcius) : "+baru.getSuhu());
+		System.out.println("=================================================");
+	}
 	
 	void TampilKenyamanan(){
 		System.out.println("==================Kenyamanan Kelas===============");

@@ -165,6 +165,51 @@ public class PropertiesRkelas {
 			return "Tidak Sesuai";
 		}
 	}
+	
+	String AnalisisKebersihan(String KondisiLante, String KondisiDinding, String KondisiAtap, String KondisiPintu, String KondisiJendela){
+		if(KondisiLante.equalsIgnoreCase("bersih") && KondisiDinding.equalsIgnoreCase("bersih") && KondisiAtap.equalsIgnoreCase("bersih") && KondisiPintu.equalsIgnoreCase("bersih") && KondisiJendela.equalsIgnoreCase("bersih")){
+			return "Sesuai";
+		}
+		else{
+			return "Tidak Sesuai";
+		}
+	}
+	
+	String AnalisisSirkulasiUdara(String SirkulaUdara){
+		if(SirkulaUdara.equalsIgnoreCase("lancar")){
+			return "Sesuai";
+		}
+		else{
+			return "Tidak Sesuai";
+		}
+	}
+	
+	String AnalisisPencahayaan(int NilaiCahaya){
+		if(NilaiCahaya >= 250 && NilaiCahaya <= 350){
+			return "Sesuai";
+		}
+		else{
+			return "Tidak Sesuai";
+		}
+	}
+	
+	String AnalisisKelembapan(int KeLembapan){
+		if(KeLembapan >= 70 && KeLembapan <= 80){
+			return "Sesuai";
+		}
+		else{
+			return "Tidak Sesuai";
+		}
+	}
+	
+	String AnalisisSuhu(int Suhu){
+		if(Suhu >= 25 && Suhu <= 35){
+			return "Sesuai";
+		}
+		else{
+			return "Tidak Sesuai";
+		}
+	}
 		
 	String AnalisisKenyamanan(String KeBisingan, String Bau, String Bocor, String KeRusakan, String KeAusan){
 		int nilai = 5;

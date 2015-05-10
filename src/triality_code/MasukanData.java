@@ -79,10 +79,33 @@ public class MasukanData {
 		System.out.println("Kondisi CCTV : ");
 		baru.setBandwith(sir.nextInt());
 		
-		
 	}
 	
-	void KenyamananKelas(){
+	void LingkunganRkelas(){
+		System.out.println("Kondisi Lantai : ");
+		baru.setKondisiLante(sir.nextLine());
+		System.out.println("Kondisi Dinding : ");
+		baru.setKondisiDinding(sir.nextLine());
+		System.out.println("Kondisi Atap : ");
+		baru.setKondisiAtap(sir.nextLine());
+		System.out.println("Kondis Pintu : ");
+		baru.setKondisiPintu(sir.nextLine());
+		System.out.println("Kondisi Jendela : ");
+		baru.setKondisiJendela(sir.nextLine());
+	}
+	
+	void KebersiahanRkelas(){
+		System.out.println("Sirkulasi Udara : ");
+		baru.setSirkulaUdara(sir.nextLine());
+		System.out.println("Nilai Pencahayaan : ");
+		baru.setNilaiCahaya(sir.nextInt());
+		System.out.println("Kelembapan (%) : ");
+		baru.setKeLembapan(sir.nextInt());
+		System.out.println("Suhu (celcius) : ");
+		baru.setSuhu(sir.nextInt());
+	}
+	
+	void KenyamananRkelas(){
 		System.out.println("Input Kebisingan : ");
 		baru.setKeBisingan(sir.nextLine());
 		System.out.println("Input Intensitas Bau : ");
@@ -95,7 +118,7 @@ public class MasukanData {
 		baru.setKeAusan(sir.nextLine());
 	}
 	
-	void KeamananKelas(){
+	void KeamananRkelas(){
 		System.out.println("Input Kekokohan : ");
 		baru.setKeKokohan(sir.nextLine());
 		System.out.println("Input Kunci Pintu : ");

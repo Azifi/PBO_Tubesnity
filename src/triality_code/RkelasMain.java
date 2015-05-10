@@ -11,13 +11,17 @@ public class RkelasMain {
 		masukin.IdentitasRkelas();
 		masukin.KondisiRkelas();
 		masukin.SaranaRkelas();
-		masukin.KenyamananKelas();
-		masukin.KeamananKelas();
+		masukin.LingkunganRkelas();
+		masukin.KebersiahanRkelas();
+		masukin.KenyamananRkelas();
+		masukin.KeamananRkelas();
 		
 		TampilkanData oper = new TampilkanData();
 		oper.TampilkanIdentitas();
 		oper.TampilkanKondisi();
 		oper.TampilkanSarana();
+		oper.TampilkanLingkungan();
+		oper.TampilkanKebersihan();
 		oper.TampilKenyamanan();
 		oper.TampilKeamanan();		
 		
