@@ -7,10 +7,10 @@ public class RuangKelas {
 	private String SirkulaUdara, Login, SSID;
 	private String PosisiSteker, PosisiKblLCD, PosisiLampu, PosisiAC, PosisiKipas,PosisiCCTV;
 	private String KeBisingan, Bau, Bocor, KeRusakan, KeAusan;
-	private String KeKokohan, PintuBkunci, JendelaBkunci, Bahaya;
+	private String KeKokohan, Bahaya;
 	private int JmlPintu, JmlJendela, JmlKursi, JmlSteker;
-	private int JmlKabelLCD, JmmlLampu, JmlAC, JmlKipas,JmlCCTV;
-	private int NilaiCahaya, KeLembapan, Suhu;
+	private int JmlKabelLCD, JmlLampu, JmlAC, JmlKipas,JmlCCTV;
+	private int NilaiCahaya, KeLembapan, Suhu, KunciPintu, KunciJendela;
 	private double Panjang, Lebar, Luas, Bandwith;
 	
 	public String getNamaRuang() {
@@ -133,12 +133,12 @@ public class RuangKelas {
 		return KeKokohan;
 	}
 	
-	public String getPintuBkunci() {
-		return PintuBkunci;
+	public int getKunciPintu() {
+		return KunciPintu;
 	}
 	
-	public String getJendelaBkunci() {
-		return JendelaBkunci;
+	public int getKunciJendela() {
+		return KunciJendela;
 	}
 	
 	public String getBahaya() {
@@ -164,8 +164,8 @@ public class RuangKelas {
 		return JmlKabelLCD;
 	}
 	
-	public int getJmmlLampu() {
-		return JmmlLampu;
+	public int getJmlLampu() {
+		return JmlLampu;
 	}
 	
 	public int getJmlAC() {
@@ -209,199 +209,199 @@ public class RuangKelas {
 	}
 
 	public void setNamaRuang(String namaRuang) {
-		NamaRuang = namaRuang;
+		this.NamaRuang = namaRuang;
 	}
 
 	public void setLokasi(String lokasi) {
-		Lokasi = lokasi;
+		this.Lokasi = lokasi;
 	}
 
 	public void setFakultas(String fakultas) {
-		Fakultas = fakultas;
+		this.Fakultas = fakultas;
 	}
 
 	public void setProdi(String prodi) {
-		Prodi = prodi;
+		this.Prodi = prodi;
 	}
 
 	public void setKondisiSteker(String kondisiSteker) {
-		KondisiSteker = kondisiSteker;
+		this.KondisiSteker = kondisiSteker;
 	}
 
 	public void setKondisiKblLCD(String kondisiKblLCD) {
-		KondisiKblLCD = kondisiKblLCD;
+		this.KondisiKblLCD = kondisiKblLCD;
 	}
 
 	public void setKondisiLampu(String kondisiLampu) {
-		KondisiLampu = kondisiLampu;
+		this.KondisiLampu = kondisiLampu;
 	}
 
 	public void setKondisiAC(String kondisiAC) {
-		KondisiAC = kondisiAC;
+		this.KondisiAC = kondisiAC;
 	}
 
 	public void setKondisiKipas(String kondisiKipas) {
-		KondisiKipas = kondisiKipas;
+		this.KondisiKipas = kondisiKipas;
 	}
 
 	public void setKondisiCCTV(String kondisiCCTV) {
-		KondisiCCTV = kondisiCCTV;
+		this.KondisiCCTV = kondisiCCTV;
 	}
 
 	public void setKondisiLante(String kondisiLante) {
-		KondisiLante = kondisiLante;
+		this.KondisiLante = kondisiLante;
 	}
 
 	public void setKondisiDinding(String kondisiDinding) {
-		KondisiDinding = kondisiDinding;
+		this.KondisiDinding = kondisiDinding;
 	}
 
 	public void setKondisiAtap(String kondisiAtap) {
-		KondisiAtap = kondisiAtap;
+		this.KondisiAtap = kondisiAtap;
 	}
 
 	public void setKondisiPintu(String kondisiPintu) {
-		KondisiPintu = kondisiPintu;
+		this.KondisiPintu = kondisiPintu;
 	}
 
 	public void setKondisiJendela(String kondisiJendela) {
-		KondisiJendela = kondisiJendela;
+		this.KondisiJendela = kondisiJendela;
 	}
 
 	public void setSirkulaUdara(String sirkulaUdara) {
-		SirkulaUdara = sirkulaUdara;
+		this.SirkulaUdara = sirkulaUdara;
 	}
 
 	public void setLogin(String login) {
-		Login = login;
+		this.Login = login;
 	}
 
 	public void setSSID(String sSID) {
-		SSID = sSID;
+		this.SSID = sSID;
 	}
 
 	public void setPosisiSteker(String posisiSteker) {
-		PosisiSteker = posisiSteker;
+		this.PosisiSteker = posisiSteker;
 	}
 
 	public void setPosisiKblLCD(String posisiKblLCD) {
-		PosisiKblLCD = posisiKblLCD;
+		this.PosisiKblLCD = posisiKblLCD;
 	}
 
 	public void setPosisiLampu(String posisiLampu) {
-		PosisiLampu = posisiLampu;
+		this.PosisiLampu = posisiLampu;
 	}
 
 	public void setPosisiAC(String posisiAC) {
-		PosisiAC = posisiAC;
+		this.PosisiAC = posisiAC;
 	}
 
 	public void setPosisiKipas(String posisiKipas) {
-		PosisiKipas = posisiKipas;
+		this.PosisiKipas = posisiKipas;
 	}
 
 	public void setPosisiCCTV(String posisiCCTV) {
-		PosisiCCTV = posisiCCTV;
+		this.PosisiCCTV = posisiCCTV;
 	}
 
 	public void setKeBisingan(String keBisingan) {
-		KeBisingan = keBisingan;
+		this.KeBisingan = keBisingan;
 	}
 
 	public void setBau(String bau) {
-		Bau = bau;
+		this.Bau = bau;
 	}
 
 	public void setBocor(String bocor) {
-		Bocor = bocor;
+		this.Bocor = bocor;
 	}
 
 	public void setKeRusakan(String keRusakan) {
-		KeRusakan = keRusakan;
+		this.KeRusakan = keRusakan;
 	}
 
 	public void setKeAusan(String keAusan) {
-		KeAusan = keAusan;
+		this.KeAusan = keAusan;
 	}
 
 	public void setKeKokohan(String keKokohan) {
-		KeKokohan = keKokohan;
+		this.KeKokohan = keKokohan;
 	}
 
-	public void setPintuBkunci(String pintuBkunci) {
-		PintuBkunci = pintuBkunci;
+	public void setKunciPintu(int KunciPintu) {
+		this.KunciPintu = KunciPintu;
 	}
 
-	public void setJendelaBkunci(String jendelaBkunci) {
-		JendelaBkunci = jendelaBkunci;
+	public void setKunciJendela(int KunciJendela) {
+		this.KunciJendela = KunciJendela;
 	}
 
 	public void setBahaya(String bahaya) {
-		Bahaya = bahaya;
+		this.Bahaya = bahaya;
 	}
 
 	public void setJmlPintu(int jmlPintu) {
-		JmlPintu = jmlPintu;
+		this.JmlPintu = jmlPintu;
 	}
 
 	public void setJmlJendela(int jmlJendela) {
-		JmlJendela = jmlJendela;
+		this.JmlJendela = jmlJendela;
 	}
 
 	public void setJmlKursi(int jmlKursi) {
-		JmlKursi = jmlKursi;
+		this.JmlKursi = jmlKursi;
 	}
 
 	public void setJmlSteker(int jmlSteker) {
-		JmlSteker = jmlSteker;
+		this.JmlSteker = jmlSteker;
 	}
 
 	public void setJmlKabelLCD(int jmlKabelLCD) {
-		JmlKabelLCD = jmlKabelLCD;
+		this.JmlKabelLCD = jmlKabelLCD;
 	}
 
 	public void setJmmlLampu(int jmmlLampu) {
-		JmmlLampu = jmmlLampu;
+		this.JmmlLampu = jmmlLampu;
 	}
 
 	public void setJmlAC(int jmlAC) {
-		JmlAC = jmlAC;
+		this.JmlAC = jmlAC;
 	}
 
 	public void setJmlKipas(int jmlKipas) {
-		JmlKipas = jmlKipas;
+		this.JmlKipas = jmlKipas;
 	}
 
 	public void setJmlCCTV(int jmlCCTV) {
-		JmlCCTV = jmlCCTV;
+		this.JmlCCTV = jmlCCTV;
 	}
 
 	public void setNilaiCahaya(int nilaiCahaya) {
-		NilaiCahaya = nilaiCahaya;
+		this.NilaiCahaya = nilaiCahaya;
 	}
 
 	public void setKeLembapan(int keLembapan) {
-		KeLembapan = keLembapan;
+		this.KeLembapan = keLembapan;
 	}
 
 	public void setSuhu(int suhu) {
-		Suhu = suhu;
+		this.Suhu = suhu;
 	}
 
 	public void setPanjang(double panjang) {
-		Panjang = panjang;
+		this.Panjang = panjang;
 	}
 
 	public void setLebar(double lebar) {
-		Lebar = lebar;
+		this.Lebar = lebar;
 	}
 
 	public void setLuas(double luas) {
-		Luas = luas;
+		this.Luas = luas;
 	}
 
 	public void setBandwith(double bandwith) {
-		Bandwith = bandwith;
+		this.Bandwith = bandwith;
 	}
 	
 }
