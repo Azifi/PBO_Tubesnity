@@ -112,7 +112,7 @@ public class PropertiesRkelas {
 		}
 	}
 	
-	String AC(int JmlAC, String KondisiAC, String PosisiAC){
+	String AnalisAC(int JmlAC, String KondisiAC, String PosisiAC){
 		int nilai = 3;
 		if(JmlAC>=2){
 			nilai--;

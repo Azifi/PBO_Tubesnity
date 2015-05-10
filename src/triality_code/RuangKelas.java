@@ -360,8 +360,8 @@ public class RuangKelas {
 		this.JmlKabelLCD = jmlKabelLCD;
 	}
 
-	public void setJmmlLampu(int jmmlLampu) {
-		this.JmmlLampu = jmmlLampu;
+	public void setJmlLampu(int jmlLampu) {
+		this.JmlLampu = jmlLampu;
 	}
 
 	public void setJmlAC(int jmlAC) {
