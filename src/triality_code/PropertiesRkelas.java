@@ -165,4 +165,60 @@ public class PropertiesRkelas {
 			return "Tidak Sesuai";
 		}
 	}
+		
+	String AnalisisKenyamanan(String KeBisingan, String Bau, String Bocor, String KeRusakan, String KeAusan){
+		int nilai = 5;
+		
+		if(KeBisingan.equalsIgnoreCase("tidak bising")){
+			nilai--;
+		}
+		
+		if(Bau.equalsIgnoreCase("tidak bau")){
+			nilai--;
+		}
+		
+		if(Bocor.equalsIgnoreCase("tidak bocor")){
+			nilai--;
+		}
+		
+		if(KeRusakan.equalsIgnoreCase("tidak rusak")){
+			nilai--;
+		}
+		
+		if(KeAusan.equalsIgnoreCase("tidak aus")){
+			nilai--;
+		}
+		
+		if(nilai==0){
+			return "sesuai";
+		}else {
+			return "tidak sesuai";
+		}
+	}
+	
+	String AnalisisKeamanan(String KekoKohan, String PintuBkunci, String JendelaBkunci, String Bahaya){
+		int nilai = 4;
+		
+		if(KekoKohan.equalsIgnoreCase("kokoh")){
+			nilai--;
+		}
+		
+		if(PintuBkunci.equalsIgnoreCase("ada")){
+			nilai--;
+		}
+		
+		if(JendelaBkunci.equalsIgnoreCase("ada")){
+			nilai--;
+		}
+		
+		if(Bahaya.equalsIgnoreCase("aman")){
+			nilai--;
+		}
+		
+		if(nilai==0){
+			return "sesuai";
+		}else{
+			return "tidak sesuai";
+		}
+	}
 }
