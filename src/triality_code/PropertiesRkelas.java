@@ -1,7 +1,33 @@
 package triality_code;
 
-public class PropertiesRkelas {
+public class PropertiesRkelas extends RuangKelas {
 	
+	public PropertiesRkelas(String NamaRuang, String Lokasi, String Fakultas,
+			String Prodi, String KondisiSteker, String KondisiKblLCD,
+			String KondisiLampu, String KondisiAC, String KondisiKipas,
+			String KondisiCCTV, String KondisiLante, String KondisiDinding,
+			String KondisiAtap, String KondisiPintu, String KondisiJendela,
+			String SirkulaUdara, String Login, String SSID,
+			String PosisiSteker, String PosisiKblLCD, String PosisiLampu,
+			String PosisiAC, String PosisiKipas, String PosisiCCTV,
+			String KeBisingan, String Bau, String Bocor, String KeRusakan,
+			String KeAusan, String KeKokohan, String Bahaya, int JmlPintu,
+			int JmlJendela, int JmlKursi, int JmlSteker, int JmlKabelLCD,
+			int JmlLampu, int JmlAC, int JmlKipas, int JmlCCTV,
+			int NilaiCahaya, int KeLembapan, int Suhu, int KunciPintu,
+			int KunciJendela, double Panjang, double Lebar, double Luas,
+			double Bandwith) {
+		super(NamaRuang, Lokasi, Fakultas, Prodi, KondisiSteker, KondisiKblLCD,
+				KondisiLampu, KondisiAC, KondisiKipas, KondisiCCTV,
+				KondisiLante, KondisiDinding, KondisiAtap, KondisiPintu,
+				KondisiJendela, SirkulaUdara, Login, SSID, PosisiSteker,
+				PosisiKblLCD, PosisiLampu, PosisiAC, PosisiKipas, PosisiCCTV,
+				KeBisingan, Bau, Bocor, KeRusakan, KeAusan, KeKokohan, Bahaya,
+				JmlPintu, JmlJendela, JmlKursi, JmlSteker, JmlKabelLCD,
+				JmlLampu, JmlAC, JmlKipas, JmlCCTV, NilaiCahaya, KeLembapan,
+				Suhu, KunciPintu, KunciJendela, Panjang, Lebar, Luas, Bandwith);
+	}
+
 	double HitungLuas(double panjang, double lebar){
 		return panjang * lebar;
 	}

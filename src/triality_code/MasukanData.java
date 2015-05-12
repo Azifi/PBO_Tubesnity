@@ -2,130 +2,161 @@ package triality_code;
 
 import java.util.Scanner;
 
-public class MasukanData {
-	Scanner sir = new Scanner(System.in);
-	RuangKelas baru = new RuangKelas();
+public class MasukanData extends RuangKelas{
+	Scanner Pufft = new Scanner(System.in);
 	
-	void IdentitasRkelas(){
-		System.out.println("Nama Ruang : ");
-		baru.setNamaRuang(sir.nextLine());
-		System.out.println("Lokasi : ");
-		baru.setLokasi(sir.nextLine());
-		System.out.println("Fakultas : ");
-		baru.setFakultas(sir.nextLine());
-		System.out.println("Program Studi : ");
-		baru.setProdi(sir.nextLine());
+	public MasukanData(String NamaRuang, String Lokasi, String Fakultas,
+			String Prodi, String KondisiSteker, String KondisiKblLCD,
+			String KondisiLampu, String KondisiAC, String KondisiKipas,
+			String KondisiCCTV, String KondisiLante, String KondisiDinding,
+			String KondisiAtap, String KondisiPintu, String KondisiJendela,
+			String SirkulaUdara, String Login, String SSID,
+			String PosisiSteker, String PosisiKblLCD, String PosisiLampu,
+			String PosisiAC, String PosisiKipas, String PosisiCCTV,
+			String KeBisingan, String Bau, String Bocor, String KeRusakan,
+			String KeAusan, String KeKokohan, String Bahaya, int JmlPintu,
+			int JmlJendela, int JmlKursi, int JmlSteker, int JmlKabelLCD,
+			int JmlLampu, int JmlAC, int JmlKipas, int JmlCCTV,
+			int NilaiCahaya, int KeLembapan, int Suhu, int KunciPintu,
+			int KunciJendela, double Panjang, double Lebar, double Luas,
+			double Bandwith) {
+		super(NamaRuang, Lokasi, Fakultas, Prodi, KondisiSteker, KondisiKblLCD,
+				KondisiLampu, KondisiAC, KondisiKipas, KondisiCCTV,
+				KondisiLante, KondisiDinding, KondisiAtap, KondisiPintu,
+				KondisiJendela, SirkulaUdara, Login, SSID, PosisiSteker,
+				PosisiKblLCD, PosisiLampu, PosisiAC, PosisiKipas, PosisiCCTV,
+				KeBisingan, Bau, Bocor, KeRusakan, KeAusan, KeKokohan, Bahaya,
+				JmlPintu, JmlJendela, JmlKursi, JmlSteker, JmlKabelLCD,
+				JmlLampu, JmlAC, JmlKipas, JmlCCTV, NilaiCahaya, KeLembapan,
+				Suhu, KunciPintu, KunciJendela, Panjang, Lebar, Luas, Bandwith);
 	}
 	
-	void KondisiRkelas(){
+	@Override
+	void IdentitasRkelas(String NamaRuang, String Lokasi, String Fakultas, String Prodi){
+		System.out.println("Nama Ruang : ");
+		super.setNamaRuang(Pufft.nextLine());
+		System.out.println("Lokasi : ");
+		super.setLokasi(Pufft.nextLine());
+		System.out.println("Fakultas : ");
+		super.setFakultas(Pufft.nextLine());
+		System.out.println("Program Studi : ");
+		super.setProdi(Pufft.nextLine());
+	}
+	
+	@Override
+	void KondisiRkelas(int Panjang, int Lebar, int JmlKursi, int JmlPintu, int JmlJendela){
 		System.out.println("Panjang Ruang : ");
-		baru.setPanjang(sir.nextInt());
+		super.setPanjang(Pufft.nextInt());
 		System.out.println("Lebar Ruang : ");
-		baru.setLebar(sir.nextInt());
+		super.setLebar(Pufft.nextInt());
 		System.out.println("Jumlah Kursi : ");
-		baru.setJmlKursi(sir.nextInt());
+		super.setJmlKursi(Pufft.nextInt());
 		System.out.println("Jumlah Pintu : ");
-		baru.setJmlPintu(sir.nextInt());
+		super.setJmlPintu(Pufft.nextInt());
 		System.out.println("Jumlah Jendela : ");
-		baru.setJmlJendela(sir.nextInt());
+		super.setJmlJendela(Pufft.nextInt());
 		
 	}
 	
-	void SaranaRkelas(){
+	void SaranaRkelas(int JmlSteker, String KondisiSteker, String PosisiSteker, int JmlKabelLCD, 
+			String KondisiKabelLCD, String PosisiKabelLCD, int JmlLampu, String KondisiLampu, 
+			String PosisiLampu, int JmlKipas, String KondisiKipas, String PosisiKipas, int JmlAC, 
+			String KondisiAC, String PosisiAC, int JmlCCTV, String KondisiCCTV, String PosisiCCTV, String SSID, int Bandwith){
 		System.out.println("Jumlah Stop Kontak : ");
-		baru.setJmlSteker(sir.nextInt());
+		super.setJmlSteker(Pufft.nextInt());
 		System.out.println("Kondisi Stop Kontak : ");
-		baru.setKondisiSteker(sir.next());
+		super.setKondisiSteker(Pufft.next());
 		System.out.println("Posisi Stop Kontak : ");
-		baru.setPosisiSteker(sir.next());
+		super.setPosisiSteker(Pufft.next());
 		
 		System.out.println("Jumlah Kabel LCD : ");
-		baru.setJmlKabelLCD(sir.nextInt());
+		super.setJmlKabelLCD(Pufft.nextInt());
 		System.out.println("Kondisi Kabel LCD : ");
-		baru.setKondisiKblLCD(sir.next());
+		super.setKondisiKblLCD(Pufft.next());
 		System.out.println("Posisi Kabel LCD : ");
-		baru.setPosisiKblLCD(sir.next());
+		super.setPosisiKblLCD(Pufft.next());
 		
 		System.out.println("Jumlah Lampu : ");
-		baru.setJmlLampu(sir.nextInt());
+		super.setJmlLampu(Pufft.nextInt());
 		System.out.println("Kondisi Lampu : ");
-		baru.setKondisiLampu(sir.next());
+		super.setKondisiLampu(Pufft.next());
 		System.out.println("Posisi Lampu : ");
-		baru.setPosisiLampu(sir.next());
+		super.setPosisiLampu(Pufft.next());
 		
 		System.out.println("Jumlah Kipas Angin : ");
-		baru.setJmlKipas(sir.nextInt());
+		super.setJmlKipas(Pufft.nextInt());
 		System.out.println("Kondisi Kipas Angin : ");
-		baru.setKondisiKipas(sir.next());
+		super.setKondisiKipas(Pufft.next());
 		System.out.println("Posisi Kipas Angin : ");
-		baru.setPosisiKipas(sir.next());
+		super.setPosisiKipas(Pufft.next());
 		
 		System.out.println("Jumlah AC : ");
-		baru.setJmlAC(sir.nextInt());
+		super.setJmlAC(Pufft.nextInt());
 		System.out.println("Kondisi AC : ");
-		baru.setKondisiAC(sir.next());
+		super.setKondisiAC(Pufft.next());
 		System.out.println("Posisi AC : ");
-		baru.setPosisiAC(sir.next());
+		super.setPosisiAC(Pufft.next());
 		
 		System.out.println("Jumlah CCTV : ");
-		baru.setJmlCCTV(sir.nextInt());
+		super.setJmlCCTV(Pufft.nextInt());
 		System.out.println("Kondisi CCTV : ");
-		baru.setKondisiCCTV(sir.next());
+		super.setKondisiCCTV(Pufft.next());
 		System.out.println("Posisi CCTV : ");
-		baru.setPosisiCCTV(sir.next());
+		super.setPosisiCCTV(Pufft.next());
 		
 		System.out.println("Pilih SSID : ");
-		baru.setSSID(sir.next());
-		System.out.println("Kondisi CCTV : ");
-		baru.setBandwith(sir.nextInt());
+		super.setSSID(Pufft.next());
+		System.out.println("Bandwith : ");
+		super.setBandwith(Pufft.nextInt());
 		
 	}
 	
 	void LingkunganRkelas(){
 		System.out.println("Kondisi Lantai : ");
-		baru.setKondisiLante(sir.nextLine());
+		super.setKondisiLante(Pufft.nextLine());
 		System.out.println("Kondisi Dinding : ");
-		baru.setKondisiDinding(sir.nextLine());
+		super.setKondisiDinding(Pufft.nextLine());
 		System.out.println("Kondisi Atap : ");
-		baru.setKondisiAtap(sir.nextLine());
+		super.setKondisiAtap(Pufft.nextLine());
 		System.out.println("Kondis Pintu : ");
-		baru.setKondisiPintu(sir.nextLine());
+		super.setKondisiPintu(Pufft.nextLine());
 		System.out.println("Kondisi Jendela : ");
-		baru.setKondisiJendela(sir.nextLine());
+		super.setKondisiJendela(Pufft.nextLine());
 	}
 	
 	void KebersiahanRkelas(){
-		System.out.println("Sirkulasi Udara : ");
-		baru.setSirkulaUdara(sir.nextLine());
+		System.out.println("Pufftkulasi Udara : ");
+		super.setSirkulaUdara(Pufft.nextLine());
 		System.out.println("Nilai Pencahayaan : ");
-		baru.setNilaiCahaya(sir.nextInt());
+		super.setNilaiCahaya(Pufft.nextInt());
 		System.out.println("Kelembapan (%) : ");
-		baru.setKeLembapan(sir.nextInt());
+		super.setKeLembapan(Pufft.nextInt());
 		System.out.println("Suhu (celcius) : ");
-		baru.setSuhu(sir.nextInt());
+		super.setSuhu(Pufft.nextInt());
 	}
 	
 	void KenyamananRkelas(){
 		System.out.println("Input Kebisingan : ");
-		baru.setKeBisingan(sir.nextLine());
+		super.setKeBisingan(Pufft.nextLine());
 		System.out.println("Input Intensitas Bau : ");
-		baru.setBau(sir.nextLine());
+		super.setBau(Pufft.nextLine());
 		System.out.println("Input Kondisi Kebocoran : ");
-		baru.setBocor(sir.nextLine());
+		super.setBocor(Pufft.nextLine());
 		System.out.println("Input Kerusakan : ");
-		baru.setKeRusakan(sir.nextLine());
+		super.setKeRusakan(Pufft.nextLine());
 		System.out.println("Input Intensitas AUS : ");
-		baru.setKeAusan(sir.nextLine());
+		super.setKeAusan(Pufft.nextLine());
 	}
 	
 	void KeamananRkelas(){
 		System.out.println("Input Kekokohan : ");
-		baru.setKeKokohan(sir.nextLine());
+		super.setKeKokohan(Pufft.nextLine());
 		System.out.println("Input Kunci Pintu : ");
-		baru.setKunciPintu(sir.nextInt());
+		super.setKunciPintu(Pufft.nextInt());
 		System.out.println("Input Kunci Jendela : ");
-		baru.setKunciJendela(sir.nextInt());
+		super.setKunciJendela(Pufft.nextInt());
 		System.out.println("Input Intensitas Bahaya : ");
-		baru.setBahaya(sir.nextLine());
+		super.setBahaya(Pufft.nextLine());
 	}
 }
+
