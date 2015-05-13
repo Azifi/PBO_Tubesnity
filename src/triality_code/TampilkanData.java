@@ -124,7 +124,7 @@ public class TampilkanData extends PropertiesRkelas {
 		System.out.println("=================================================");
 	}
 
-	void TampilKenyamanan() {
+	void TampilKenyamanan(String keBisingan, String Bau, String Bocor, String KeRusakan, String KeAusan) {
 		System.out.println("==================Kenyamanan Kelas===============");
 		System.out.println("Kebisingan : " + super.getKeBisingan());
 		System.out.println("Kondisi Bau Ruangan : " + super.getBau());
@@ -134,7 +134,7 @@ public class TampilkanData extends PropertiesRkelas {
 		System.out.println("=================================================");
 	}
 
-	void TampilKeamanan() {
+	void TampilKeamanan(String KeKokohan, String Bahaya, int KunciPintu, int KunciJendela) {
 		boolean ulang = false;
 		while (ulang == false) {
 

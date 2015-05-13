@@ -14,9 +14,11 @@ public class RkelasMain {
 		Masukin.SaranaRkelas(0, "KondisiSteker", "PosisiSteker", 0, "KondisiKblLCD", "PosisiKblLCD", 0, "KondisiLampu", "PosisiLampu", 
 				0, "KondisiKipas", "PosisiKipas", 0, "KondisiAC", "PosisiAC", 0, "KondisiCCTV", "PosisiCCTV", "SSID", 0);
 		/*Masukin.LingkunganRkelas();
-		Masukin.KebersiahanRkelas();
-		Masukin.KenyamananRkelas();
-		Masukin.KeamananRkelas();*/
+		Masukin.KebersiahanRkelas();*/
+		
+		Masukin.KenyamananRkelas("Bising", "Bau", "Bocor", "KeRusakan", "AUS");
+		
+		Masukin.KeamananRkelas("Kokoh", "Bahaya", 0, 0);
 		
 		TampilkanData Oper = new TampilkanData (Masukin.getNamaRuang(), Masukin.getLokasi(), Masukin.getFakultas(), 
 				Masukin.getProdi(), Masukin.getKondisiSteker(), Masukin.getKondisiKblLCD(),
@@ -28,17 +30,24 @@ public class RkelasMain {
 				Masukin.getJmlPintu(), Masukin.getJmlJendela(), Masukin.getJmlKursi(), Masukin.getJmlSteker(), Masukin.getJmlKabelLCD(),
 				Masukin.getJmlLampu(), Masukin.getJmlAC(), Masukin.getJmlKipas(), Masukin.getJmlCCTV(), Masukin.getNilaiCahaya(), Masukin.getKeLembapan(),
 				Masukin.getSuhu(), Masukin.getKunciPintu(), Masukin.getKunciJendela(), Masukin.getPanjang(), Masukin.getLebar(), Masukin.getLuas(), Masukin.getBandwith());
+		
 		Oper.TampilkanIdentitas(Oper.getNamaRuang(), Oper.getLokasi(), Oper.getFakultas(), 
 				Oper.getProdi());
+		
 		Oper.TampilkanKondisi(Oper.getPanjang(), Oper.getLebar(), Oper.getJmlKursi(), Oper.getJmlPintu(), Oper.getJmlJendela());
+		
 		Oper.TampilkanSarana(Oper.getJmlSteker(), Oper.getKondisiSteker(), Oper.getPosisiSteker(), Oper.getJmlKabelLCD(), Oper.getKondisiKblLCD(), 
 				Oper.getPosisiKblLCD(), Oper.getJmlLampu(), Oper.getKondisiLampu(), Oper.getPosisiLampu(), Oper.getJmlKipas(), Oper.getKondisiKipas(),
 				Oper.getPosisiKipas(), Oper.getJmlAC(), Oper.getKondisiAC(), Oper.getPosisiAC(), Oper.getJmlCCTV(), Oper.getKondisiCCTV(), Oper.getPosisiCCTV(), 
 				Oper.getSSID(), Oper.getBandwith());
+		
 		/*Oper.TampilkanLingkungan();
-		Oper.TampilkanKebersihan();
-		Oper.TampilKenyamanan();
-		Oper.TampilKeamanan();*/		
+		
+		Oper.TampilkanKebersihan();*/
+		
+		Oper.TampilKenyamanan(Oper.getKeBisingan(), Oper.getBau(), Oper.getBocor(), Oper.getKeRusakan(), Oper.getKeAusan());
+		
+		Oper.TampilKeamanan(Oper.getKeKokohan(), Oper.getBahaya(), Oper.getKunciPintu(), Oper.getKunciJendela());		
 		
 	}
 }

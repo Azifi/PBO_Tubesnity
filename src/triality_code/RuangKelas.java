@@ -121,6 +121,21 @@ class RuangKelas {
 		
 	}
 	
+	void KenyamananRkelas(String keBisingan, String Bau, String Bocor, String KeRusakan, String KeAusan){
+		this.KeBisingan = keBisingan;
+		this.Bau = Bau;
+		this.Bocor = Bocor;
+		this.KeRusakan = KeRusakan;
+		this.KeAusan = KeAusan;
+	}
+	
+	void KeamananRkelas(String KeKokohan, String Bahaya, int KunciPintu, int KunciJendela){
+		this.KeKokohan = KeKokohan;
+		this.Bahaya = Bahaya;
+		this.KunciPintu = KunciPintu;
+		this.KunciJendela = KunciJendela;
+	}
+	
 	String getNamaRuang() {
 		return NamaRuang;
 	}

@@ -135,7 +135,8 @@ public class MasukanData extends RuangKelas{
 		super.setSuhu(Pufft.nextInt());
 	}
 	
-	void KenyamananRkelas(){
+	@Override
+	void KenyamananRkelas(String keBisingan, String Bau, String Bocor, String KeRusakan, String KeAusan){
 		System.out.println("Input Kebisingan : ");
 		super.setKeBisingan(Pufft.nextLine());
 		System.out.println("Input Intensitas Bau : ");
@@ -148,7 +149,8 @@ public class MasukanData extends RuangKelas{
 		super.setKeAusan(Pufft.nextLine());
 	}
 	
-	void KeamananRkelas(){
+	@Override 
+	void KeamananRkelas(String KeKokohan, String Bahaya, int KunciPintu, int KunciJendela){
 		System.out.println("Input Kekokohan : ");
 		super.setKeKokohan(Pufft.nextLine());
 		System.out.println("Input Kunci Pintu : ");
