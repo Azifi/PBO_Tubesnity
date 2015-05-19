@@ -58,6 +58,7 @@ public class MasukanData extends RuangKelas{
 		
 	}
 	
+	@Override
 	void SaranaRkelas(int JmlSteker, String KondisiSteker, String PosisiSteker, int JmlKabelLCD, 
 			String KondisiKabelLCD, String PosisiKabelLCD, int JmlLampu, String KondisiLampu, 
 			String PosisiLampu, int JmlKipas, String KondisiKipas, String PosisiKipas, int JmlAC, 
@@ -111,7 +112,8 @@ public class MasukanData extends RuangKelas{
 		
 	}
 	
-	void LingkunganRkelas(){
+	@Override
+	void LingkunganRkelas(String KondisiLante, String KondisiDinding, String KondisiAtap, String KondisiPintu, String KondisiJendela){
 		System.out.println("Kondisi Lantai : ");
 		super.setKondisiLante(Pufft.nextLine());
 		System.out.println("Kondisi Dinding : ");
@@ -124,8 +126,9 @@ public class MasukanData extends RuangKelas{
 		super.setKondisiJendela(Pufft.nextLine());
 	}
 	
-	void KebersiahanRkelas(){
-		System.out.println("Pufftkulasi Udara : ");
+	@Override
+	void KebersiahanRkelas(String SirkulaUdara, int NilaiCahaya, int KeLembapan, int Suhu){
+		System.out.println("Sirkulasi Udara : ");
 		super.setSirkulaUdara(Pufft.nextLine());
 		System.out.println("Nilai Pencahayaan : ");
 		super.setNilaiCahaya(Pufft.nextInt());

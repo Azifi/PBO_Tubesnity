@@ -1,6 +1,6 @@
 package triality_code;
 
-class RuangKelas {
+public abstract class RuangKelas {
 	private String NamaRuang, Lokasi, Fakultas, Prodi;
 	private String KondisiSteker, KondisiKblLCD, KondisiLampu, KondisiAC, KondisiKipas, KondisiCCTV;
 	private String KondisiLante, KondisiDinding, KondisiAtap, KondisiPintu, KondisiJendela;
@@ -119,6 +119,21 @@ class RuangKelas {
 		this.SSID = SSID;
 		this.Bandwith = Bandwith;
 		
+	}
+	
+	void LingkunganRkelas(String KondisiLante, String KondisiDinding, String KondisiAtap, String KondisiPintu, String KondisiJendela){
+		this.KondisiLante = KondisiLante;
+		this.KondisiDinding = KondisiDinding;
+		this.KondisiAtap = KondisiAtap;
+		this.KondisiPintu = KondisiPintu;
+		this.KondisiJendela = KondisiJendela;
+	}
+	
+	void KebersiahanRkelas(String SirkulaUdara, int NilaiCahaya, int KeLembapan, int Suhu){
+		this.SirkulaUdara = SirkulaUdara;
+		this.NilaiCahaya = NilaiCahaya;
+		this.KeLembapan = KeLembapan;
+		this.Suhu = Suhu;
 	}
 	
 	void KenyamananRkelas(String keBisingan, String Bau, String Bocor, String KeRusakan, String KeAusan){

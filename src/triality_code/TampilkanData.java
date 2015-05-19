@@ -105,7 +105,7 @@ public class TampilkanData extends PropertiesRkelas {
 
 	}
 
-	void TampilkanLingkungan() {
+	void TampilkanLingkungan(String KondisiLante, String KondisiDinding, String KondisiAtap, String KondisiPintu, String KondisiJendela) {
 		System.out.println("==================Lingkungan Kelas===============");
 		System.out.println("Kondisi Lantai : " + super.getKondisiLante());
 		System.out.println("Kondisi Dinding : " + super.getKondisiDinding());
@@ -115,7 +115,7 @@ public class TampilkanData extends PropertiesRkelas {
 		System.out.println("=================================================");
 	}
 
-	void TampilkanKebersihan() {
+	void TampilkanKebersihan(String SirkulaUdara, int NilaiCahaya, int KeLembapan, int Suhu) {
 		System.out.println("==================Kebersihan Kelas===============");
 		System.out.println("Sirkulasi Udara : " + super.getSirkulaUdara());
 		System.out.println("Nilai Pencahayaan : " + super.getNilaiCahaya());

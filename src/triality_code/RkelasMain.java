@@ -13,12 +13,11 @@ public class RkelasMain {
 		Masukin.KondisiRkelas(0, 0, 0, 0, 0);
 		Masukin.SaranaRkelas(0, "KondisiSteker", "PosisiSteker", 0, "KondisiKblLCD", "PosisiKblLCD", 0, "KondisiLampu", "PosisiLampu", 
 				0, "KondisiKipas", "PosisiKipas", 0, "KondisiAC", "PosisiAC", 0, "KondisiCCTV", "PosisiCCTV", "SSID", 0);
-		/*Masukin.LingkunganRkelas();
-		Masukin.KebersiahanRkelas();*/
-		
+		Masukin.LingkunganRkelas("kondisiLante", "kondisiDinding", "kondisiAtap", "kondisiAtap", "kondisiJendela");
+		Masukin.KebersiahanRkelas("sirkulaUdara", 0,0,0);
 		Masukin.KenyamananRkelas("Bising", "Bau", "Bocor", "KeRusakan", "AUS");
-		
 		Masukin.KeamananRkelas("Kokoh", "Bahaya", 0, 0);
+		
 		
 		TampilkanData Oper = new TampilkanData (Masukin.getNamaRuang(), Masukin.getLokasi(), Masukin.getFakultas(), 
 				Masukin.getProdi(), Masukin.getKondisiSteker(), Masukin.getKondisiKblLCD(),
@@ -41,9 +40,9 @@ public class RkelasMain {
 				Oper.getPosisiKipas(), Oper.getJmlAC(), Oper.getKondisiAC(), Oper.getPosisiAC(), Oper.getJmlCCTV(), Oper.getKondisiCCTV(), Oper.getPosisiCCTV(), 
 				Oper.getSSID(), Oper.getBandwith());
 		
-		/*Oper.TampilkanLingkungan();
+		Oper.TampilkanLingkungan(Oper.getKondisiLante(), Oper.getKondisiDinding(), Oper.getKondisiAtap(), Oper.getKondisiPintu(), Oper.getKondisiJendela());
 		
-		Oper.TampilkanKebersihan();*/
+		Oper.TampilkanKebersihan(Oper.getSirkulaUdara(), Oper.getNilaiCahaya(), Oper.getKeLembapan(), Oper.getSuhu());
 		
 		Oper.TampilKenyamanan(Oper.getKeBisingan(), Oper.getBau(), Oper.getBocor(), Oper.getKeRusakan(), Oper.getKeAusan());
 		
