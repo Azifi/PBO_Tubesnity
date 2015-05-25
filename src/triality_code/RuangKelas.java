@@ -2,17 +2,20 @@ package triality_code;
 
 public abstract class RuangKelas {
 	private String NamaRuang, Lokasi, Fakultas, Prodi;
-	private String KondisiSteker, KondisiKblLCD, KondisiLampu, KondisiAC, KondisiKipas, KondisiCCTV;
-	private String KondisiLante, KondisiDinding, KondisiAtap, KondisiPintu, KondisiJendela;
+	private String KondisiSteker, KondisiKblLCD, KondisiLampu, KondisiAC,
+			KondisiKipas, KondisiCCTV;
+	private String KondisiLante, KondisiDinding, KondisiAtap, KondisiPintu,
+			KondisiJendela;
 	private String SirkulaUdara, Login, SSID;
-	private String PosisiSteker, PosisiKblLCD, PosisiLampu, PosisiAC, PosisiKipas,PosisiCCTV;
+	private String PosisiSteker, PosisiKblLCD, PosisiLampu, PosisiAC,
+			PosisiKipas, PosisiCCTV;
 	private String KeBisingan, Bau, Bocor, KeRusakan, KeAusan;
 	private String KeKokohan, Bahaya;
-	private int JmlPintu, JmlJendela, JmlKursi, JmlSteker;
-	private int JmlKabelLCD, JmlLampu, JmlAC, JmlKipas,JmlCCTV;
+	private int JmlPintu, JmlJendela, JmlKursi, JmlSteker, Panjang, Lebar;
+	private int JmlKabelLCD, JmlLampu, JmlAC, JmlKipas, JmlCCTV;
 	private int NilaiCahaya, KeLembapan, Suhu, KunciPintu, KunciJendela;
-	private double Panjang, Lebar, Luas, Bandwith;
-	
+	private double Luas, Bandwith;
+
 	public RuangKelas(String NamaRuang, String Lokasi, String Fakultas,
 			String Prodi, String KondisiSteker, String KondisiKblLCD,
 			String KondisiLampu, String KondisiAC, String KondisiKipas,
@@ -26,7 +29,7 @@ public abstract class RuangKelas {
 			int JmlJendela, int JmlKursi, int JmlSteker, int JmlKabelLCD,
 			int JmlLampu, int JmlAC, int JmlKipas, int JmlCCTV,
 			int NilaiCahaya, int KeLembapan, int Suhu, int KunciPintu,
-			int KunciJendela, double Panjang, double Lebar, double Luas,
+			int KunciJendela, int Panjang, int Lebar, double Luas,
 			double Bandwith) {
 		super();
 		this.NamaRuang = NamaRuang;
@@ -79,15 +82,32 @@ public abstract class RuangKelas {
 		this.Luas = Luas;
 		this.Bandwith = Bandwith;
 	}
-
-	void IdentitasRkelas(String NamaRuang, String Lokasi, String Fakultas, String Prodi){
+	
+	//overload
+	void IdentitasRkelas(String NamaRuang, String Lokasi, String Fakultas) {
+		this.NamaRuang = NamaRuang;
+		this.Lokasi = Lokasi;
+		this.Fakultas = Fakultas;
+	}
+	
+	void IdentitasRkelas(String NamaRuang, String Lokasi, String Fakultas,
+			String Prodi) {
 		this.NamaRuang = NamaRuang;
 		this.Lokasi = Lokasi;
 		this.Fakultas = Fakultas;
 		this.Prodi = Prodi;
 	}
+
+	//overload
+	void KondisiRkelas(int Panjang, int Lebar, int JmlKursi, int JmlPintu) {
+		this.Panjang = Panjang;
+		this.Lebar = Lebar;
+		this.JmlKursi = JmlKursi;
+		this.JmlPintu = JmlPintu;
+	}
 	
-	void KondisiRkelas(int Panjang, int Lebar, int JmlKursi, int JmlPintu, int JmlJendela){
+	void KondisiRkelas(int Panjang, int Lebar, int JmlKursi, int JmlPintu,
+			int JmlJendela) {
 		this.Panjang = Panjang;
 		this.Lebar = Lebar;
 		this.JmlKursi = JmlKursi;
@@ -95,253 +115,325 @@ public abstract class RuangKelas {
 		this.JmlJendela = JmlJendela;
 	}
 	
-	void SaranaRkelas(int JmlSteker, String KondisiSteker, String PosisiSteker, int JmlKabelLCD, String KondisiKabelLCD, String PosisiKabelLCD,
-			int JmlLampu, String KondisiLampu, String PosisiLampu, int JmlKipas, String KondisiKipas, String PosisiKipas, int JmlAC, String KondisiAC,
-			String PosisiAC, int JmlCCTV, String KondisiCCTV, String PosisiCCTV, String SSID, int Bandwith){
-		this.JmlSteker = JmlSteker;
-		this.KondisiSteker = KondisiSteker;
-		this.PosisiSteker = PosisiSteker;
-		this.JmlKabelLCD = JmlKabelLCD;
-		this.KondisiKblLCD = KondisiKabelLCD;
-		this.PosisiKblLCD = PosisiKabelLCD;
-		this.JmlLampu = JmlLampu;
-		this.KondisiLampu = KondisiLampu;
-		this.PosisiLampu = PosisiLampu;
-		this.JmlKipas = JmlKipas;
-		this.KondisiKipas = KondisiKipas;
-		this.PosisiKipas = PosisiKipas;
-		this.JmlAC = JmlAC;
-		this.KondisiAC = KondisiAC;
-		this.PosisiAC = PosisiAC;
-		this.JmlCCTV = JmlCCTV;
-		this.KondisiCCTV = KondisiCCTV;
-		this.PosisiCCTV = PosisiCCTV;
-		this.SSID = SSID;
-		this.Bandwith = Bandwith;
+	//overload
+	void SaranaRkelas(int JmlSteker, String KondisiSteker, String PosisiSteker,
+			int JmlKabelLCD, String KondisiKabelLCD, String PosisiKabelLCD,
+			int JmlLampu, String KondisiLampu, String PosisiLampu,
+			int JmlKipas, String KondisiKipas, String PosisiKipas, int JmlAC,
+			String KondisiAC, String PosisiAC, int JmlCCTV, String KondisiCCTV,
+			String PosisiCCTV, String SSID) {
 		
+			this.JmlSteker = JmlSteker;
+			this.KondisiSteker = KondisiSteker;
+			this.PosisiSteker = PosisiSteker;
+			this.JmlKabelLCD = JmlKabelLCD;
+			this.KondisiKblLCD = KondisiKabelLCD;
+			this.PosisiKblLCD = PosisiKabelLCD;
+			this.JmlLampu = JmlLampu;
+			this.KondisiLampu = KondisiLampu;
+			this.PosisiLampu = PosisiLampu;
+			this.JmlKipas = JmlKipas;
+			this.KondisiKipas = KondisiKipas;
+			this.PosisiKipas = PosisiKipas;
+			this.JmlAC = JmlAC;
+			this.KondisiAC = KondisiAC;
+			this.PosisiAC = PosisiAC;
+			this.JmlCCTV = JmlCCTV;
+			this.KondisiCCTV = KondisiCCTV;
+			this.PosisiCCTV = PosisiCCTV;
+			this.SSID = SSID;
+
+	}
+
+	void SaranaRkelas(int JmlSteker, String KondisiSteker, String PosisiSteker,
+			int JmlKabelLCD, String KondisiKabelLCD, String PosisiKabelLCD,
+			int JmlLampu, String KondisiLampu, String PosisiLampu,
+			int JmlKipas, String KondisiKipas, String PosisiKipas, int JmlAC,
+			String KondisiAC, String PosisiAC, int JmlCCTV, String KondisiCCTV,
+			String PosisiCCTV, String SSID, int Bandwith) {
+		
+			this.JmlSteker = JmlSteker;
+			this.KondisiSteker = KondisiSteker;
+			this.PosisiSteker = PosisiSteker;
+			this.JmlKabelLCD = JmlKabelLCD;
+			this.KondisiKblLCD = KondisiKabelLCD;
+			this.PosisiKblLCD = PosisiKabelLCD;
+			this.JmlLampu = JmlLampu;
+			this.KondisiLampu = KondisiLampu;
+			this.PosisiLampu = PosisiLampu;
+			this.JmlKipas = JmlKipas;
+			this.KondisiKipas = KondisiKipas;
+			this.PosisiKipas = PosisiKipas;
+			this.JmlAC = JmlAC;
+			this.KondisiAC = KondisiAC;
+			this.PosisiAC = PosisiAC;
+			this.JmlCCTV = JmlCCTV;
+			this.KondisiCCTV = KondisiCCTV;
+			this.PosisiCCTV = PosisiCCTV;
+			this.SSID = SSID;
+			this.Bandwith = Bandwith;
+
+	}
+
+	//overload
+	void LingkunganRkelas(String KondisiLante, String KondisiDinding,
+			String KondisiAtap, String KondisiPintu) {
+		this.KondisiLante = KondisiLante;
+		this.KondisiDinding = KondisiDinding;
+		this.KondisiAtap = KondisiAtap;
+		this.KondisiPintu = KondisiPintu;
 	}
 	
-	void LingkunganRkelas(String KondisiLante, String KondisiDinding, String KondisiAtap, String KondisiPintu, String KondisiJendela){
+	void LingkunganRkelas(String KondisiLante, String KondisiDinding,
+			String KondisiAtap, String KondisiPintu, String KondisiJendela) {
 		this.KondisiLante = KondisiLante;
 		this.KondisiDinding = KondisiDinding;
 		this.KondisiAtap = KondisiAtap;
 		this.KondisiPintu = KondisiPintu;
 		this.KondisiJendela = KondisiJendela;
 	}
+
+	//overload
+	void KebersiahanRkelas(String SirkulaUdara, int NilaiCahaya,
+			int KeLembapan) {
+		this.SirkulaUdara = SirkulaUdara;
+		this.NilaiCahaya = NilaiCahaya;
+		this.KeLembapan = KeLembapan;
+	}
 	
-	void KebersiahanRkelas(String SirkulaUdara, int NilaiCahaya, int KeLembapan, int Suhu){
+	void KebersiahanRkelas(String SirkulaUdara, int NilaiCahaya,
+			int KeLembapan, int Suhu) {
 		this.SirkulaUdara = SirkulaUdara;
 		this.NilaiCahaya = NilaiCahaya;
 		this.KeLembapan = KeLembapan;
 		this.Suhu = Suhu;
 	}
-	
-	void KenyamananRkelas(String keBisingan, String Bau, String Bocor, String KeRusakan, String KeAusan){
+
+	//overload
+	void KenyamananRkelas(String keBisingan, String Bau, String Bocor,
+			String KeRusakan) {
+		this.KeBisingan = keBisingan;
+		this.Bau = Bau;
+		this.Bocor = Bocor;
+		this.KeRusakan = KeRusakan;
+	}
+
+	void KenyamananRkelas(String keBisingan, String Bau, String Bocor,
+			String KeRusakan, String KeAusan) {
 		this.KeBisingan = keBisingan;
 		this.Bau = Bau;
 		this.Bocor = Bocor;
 		this.KeRusakan = KeRusakan;
 		this.KeAusan = KeAusan;
 	}
+
+	//overload
+	void KeamananRkelas(String KeKokohan, String Bahaya, int KunciPintu) {
+		this.KeKokohan = KeKokohan;
+		this.Bahaya = Bahaya;
+		this.KunciPintu = KunciPintu;
+	}
 	
-	void KeamananRkelas(String KeKokohan, String Bahaya, int KunciPintu, int KunciJendela){
+	void KeamananRkelas(String KeKokohan, String Bahaya, int KunciPintu,
+			int KunciJendela) {
 		this.KeKokohan = KeKokohan;
 		this.Bahaya = Bahaya;
 		this.KunciPintu = KunciPintu;
 		this.KunciJendela = KunciJendela;
 	}
-	
+
 	String getNamaRuang() {
 		return NamaRuang;
 	}
-	
+
 	String getLokasi() {
 		return Lokasi;
 	}
-	
+
 	String getFakultas() {
 		return Fakultas;
 	}
-	
+
 	String getProdi() {
 		return Prodi;
 	}
-	
+
 	String getKondisiSteker() {
 		return KondisiSteker;
 	}
-	
+
 	String getKondisiKblLCD() {
 		return KondisiKblLCD;
 	}
-	
+
 	String getKondisiLampu() {
 		return KondisiLampu;
 	}
-	
+
 	String getKondisiAC() {
 		return KondisiAC;
 	}
-	
+
 	String getKondisiKipas() {
 		return KondisiKipas;
 	}
-	
+
 	String getKondisiCCTV() {
 		return KondisiCCTV;
 	}
-	
+
 	String getKondisiLante() {
 		return KondisiLante;
 	}
-	
+
 	String getKondisiDinding() {
 		return KondisiDinding;
 	}
-	
+
 	String getKondisiAtap() {
 		return KondisiAtap;
 	}
-	
+
 	String getKondisiPintu() {
 		return KondisiPintu;
 	}
-	
+
 	String getKondisiJendela() {
 		return KondisiJendela;
 	}
-	
+
 	String getSirkulaUdara() {
 		return SirkulaUdara;
 	}
-	
+
 	String getLogin() {
 		return Login;
 	}
-	
+
 	String getSSID() {
 		return SSID;
 	}
-	
+
 	String getPosisiSteker() {
 		return PosisiSteker;
 	}
-	
+
 	String getPosisiKblLCD() {
 		return PosisiKblLCD;
 	}
-	
+
 	String getPosisiLampu() {
 		return PosisiLampu;
 	}
-	
+
 	String getPosisiAC() {
 		return PosisiAC;
 	}
-	
+
 	String getPosisiKipas() {
 		return PosisiKipas;
 	}
-	
+
 	String getPosisiCCTV() {
 		return PosisiCCTV;
 	}
-	
+
 	String getKeBisingan() {
 		return KeBisingan;
 	}
-	
+
 	String getBau() {
 		return Bau;
 	}
-	
+
 	String getBocor() {
 		return Bocor;
 	}
-	
+
 	String getKeRusakan() {
 		return KeRusakan;
 	}
-	
+
 	String getKeAusan() {
 		return KeAusan;
 	}
-	
+
 	String getKeKokohan() {
 		return KeKokohan;
 	}
-	
+
 	int getKunciPintu() {
 		return KunciPintu;
 	}
-	
+
 	int getKunciJendela() {
 		return KunciJendela;
 	}
-	
+
 	String getBahaya() {
 		return Bahaya;
 	}
-	
+
 	int getJmlPintu() {
 		return JmlPintu;
 	}
+
 	int getJmlJendela() {
 		return JmlJendela;
 	}
-	
+
 	int getJmlKursi() {
 		return JmlKursi;
 	}
-	
+
 	int getJmlSteker() {
 		return JmlSteker;
 	}
-	
+
 	int getJmlKabelLCD() {
 		return JmlKabelLCD;
 	}
-	
+
 	int getJmlLampu() {
 		return JmlLampu;
 	}
-	
+
 	int getJmlAC() {
 		return JmlAC;
 	}
-	
+
 	int getJmlKipas() {
 		return JmlKipas;
 	}
-	
+
 	int getJmlCCTV() {
 		return JmlCCTV;
 	}
-	
+
 	int getNilaiCahaya() {
 		return NilaiCahaya;
 	}
-	
+
 	int getKeLembapan() {
 		return KeLembapan;
 	}
-	
+
 	int getSuhu() {
 		return Suhu;
 	}
-	
-	double getPanjang() {
+
+	int getPanjang() {
 		return Panjang;
 	}
-	
-	double getLebar() {
+
+	int getLebar() {
 		return Lebar;
 	}
-	
+
 	double getLuas() {
 		return Luas;
 	}
-	
+
 	double getBandwith() {
 		return Bandwith;
 	}
@@ -526,11 +618,11 @@ public abstract class RuangKelas {
 		this.Suhu = suhu;
 	}
 
-	void setPanjang(double panjang) {
+	void setPanjang(int panjang) {
 		this.Panjang = panjang;
 	}
 
-	void setLebar(double lebar) {
+	void setLebar(int lebar) {
 		this.Lebar = lebar;
 	}
 
@@ -541,5 +633,5 @@ public abstract class RuangKelas {
 	void setBandwith(double bandwith) {
 		this.Bandwith = bandwith;
 	}
-	
+
 }
