@@ -1,18 +1,45 @@
 package venta.rista.task.goeys.evaluasi;
 
-import javax.swing.JButton;
-import javax.swing.JPanel;
-import javax.swing.JLabel;
-import javax.swing.JSlider;
-import javax.swing.JTextField;
-import javax.swing.JSpinner;
-import javax.swing.JSeparator;
-import javax.swing.JRadioButton;
-import javax.swing.JCheckBox;
-import javax.swing.SwingConstants;
-import javax.swing.event.ChangeListener;
-import javax.swing.event.ChangeEvent;
+import java.awt.Panel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JSeparator;
+import javax.swing.JSlider;
+import javax.swing.JSpinner;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+
+
+import venta.rista.task.err.impl.KeamananImpl;
+import venta.rista.task.err.impl.KebersihanImpl;
+import venta.rista.task.err.impl.KondisiImpl;
+
+import venta.rista.task.err.interf.KeamananInterf;
+import venta.rista.task.err.interf.KebersihanInterf;
+import venta.rista.task.err.interf.KondisiInterf;
+
+import venta.rista.task.err.mais.Keamanan;
+import venta.rista.task.err.mais.Kebersihan;
+import venta.rista.task.err.mais.Kondisi;
+
+
 
 public class KeadaanRkelas extends JPanel {
 	/**
@@ -25,17 +52,31 @@ public class KeadaanRkelas extends JPanel {
 	private JTextField textFieldPanjang;
 	private JSlider sliderLebar;
 	private JTextField textFieldLebar;
+	private JSpinner spinnerJmlKursi;
+	private JSpinner spinnerJmlPintu;
+	private JSpinner spinnerJmlJendela;
+	private JSpinner spinnerkPintu;
+	private JSpinner spinnerkJendela;
+	private JRadioButton radioButtonLancar;
+	private JRadioButton radioButtonTdkLancar;
+	private JRadioButton radioButtonKokoh;
+	private JRadioButton radioButtonTdkKokoh;
 	private JSlider sliderCahaya;
 	private JSlider sliderLembab;
 	private JSlider sliderSuhu;
 	private final ButtonGroup buttonGroupSirkulasi = new ButtonGroup();
 	private final ButtonGroup buttonGroupKokoh = new ButtonGroup();
+	KondisiInterf kond;
+	KebersihanInterf keb;
+	KeamananInterf aman;
 	/**
 	 * Create the panel.
 	 */
 	public KeadaanRkelas() {
 		setLayout(null);
-		
+		kond = new KondisiImpl();
+		keb = new KebersihanImpl();
+		aman = new KeamananImpl();
 		JLabel labelPanjang = new JLabel("Panjang Ruang");
 		labelPanjang.setBounds(10, 22, 92, 14);
 		add(labelPanjang);
@@ -92,7 +133,7 @@ public class KeadaanRkelas extends JPanel {
 		labelJmlKursi.setBounds(10, 67, 82, 14);
 		add(labelJmlKursi);
 		
-		JSpinner spinnerJmlKursi = new JSpinner();
+		spinnerJmlKursi = new JSpinner();
 		spinnerJmlKursi.setBounds(110, 64, 36, 20);
 		add(spinnerJmlKursi);
 		
@@ -104,7 +145,7 @@ public class KeadaanRkelas extends JPanel {
 		labelJmlPintu.setBounds(10, 98, 82, 14);
 		add(labelJmlPintu);
 		
-		JSpinner spinnerJmlPintu = new JSpinner();
+		spinnerJmlPintu = new JSpinner();
 		spinnerJmlPintu.setBounds(110, 95, 36, 20);
 		add(spinnerJmlPintu);
 		
@@ -116,7 +157,7 @@ public class KeadaanRkelas extends JPanel {
 		labelJmlJendela.setBounds(10, 130, 92, 14);
 		add(labelJmlJendela);
 		
-		JSpinner spinnerJmlJendela = new JSpinner();
+		spinnerJmlJendela = new JSpinner();
 		spinnerJmlJendela.setBounds(110, 127, 36, 20);
 		add(spinnerJmlJendela);
 		
@@ -132,7 +173,7 @@ public class KeadaanRkelas extends JPanel {
 		labelPintu.setBounds(202, 98, 46, 14);
 		add(labelPintu);
 		
-		JSpinner spinnerkPintu = new JSpinner();
+		spinnerkPintu = new JSpinner();
 		spinnerkPintu.setBounds(248, 95, 36, 20);
 		add(spinnerkPintu);
 		
@@ -144,7 +185,7 @@ public class KeadaanRkelas extends JPanel {
 		labelJendela.setBounds(202, 130, 46, 14);
 		add(labelJendela);
 		
-		JSpinner spinnerkJendela = new JSpinner();
+		spinnerkJendela = new JSpinner();
 		spinnerkJendela.setBounds(248, 127, 36, 20);
 		add(spinnerkJendela);
 		
@@ -160,12 +201,12 @@ public class KeadaanRkelas extends JPanel {
 		labelSirkulasi.setBounds(10, 178, 106, 14);
 		add(labelSirkulasi);
 		
-		JRadioButton radioButtonLancar = new JRadioButton("Lancar");
-		buttonGroupSirkulasi.add(radioButtonLancar);
+		radioButtonLancar = new JRadioButton("Lancar");
 		radioButtonLancar.setBounds(100, 174, 67, 23);
+		buttonGroupSirkulasi.add(radioButtonLancar);
 		add(radioButtonLancar);
 		
-		JRadioButton radioButtonTdkLancar = new JRadioButton("Tidak Lancar");
+		radioButtonTdkLancar = new JRadioButton("Tidak Lancar");
 		buttonGroupSirkulasi.add(radioButtonTdkLancar);
 		radioButtonTdkLancar.setBounds(169, 174, 109, 23);
 		add(radioButtonTdkLancar);
@@ -175,6 +216,7 @@ public class KeadaanRkelas extends JPanel {
 		add(labelCahaya);
 		
 		sliderCahaya = new JSlider();
+		sliderCahaya.setMaximum(400);
 		sliderCahaya.setPaintTicks(true);
 		sliderCahaya.setPaintLabels(true);
 		sliderCahaya.setBounds(3, 240, 183, 26);
@@ -217,6 +259,7 @@ public class KeadaanRkelas extends JPanel {
 		add(labelSuhu);
 		
 		textFieldSuhu = new JTextField();
+		textFieldSuhu.setText("0");
 		textFieldSuhu.setColumns(10);
 		textFieldSuhu.setBounds(95, 321, 36, 20);
 		add(textFieldSuhu);
@@ -237,12 +280,12 @@ public class KeadaanRkelas extends JPanel {
 		separatorSuasana.setBounds(0, 385, 422, 8);
 		add(separatorSuasana);
 		
-		JRadioButton radioButtonKokoh = new JRadioButton("Kokoh");
+		radioButtonKokoh = new JRadioButton("Kokoh");
 		buttonGroupKokoh.add(radioButtonKokoh);
 		radioButtonKokoh.setBounds(196, 352, 67, 23);
 		add(radioButtonKokoh);
 		
-		JRadioButton radioButtonTdkKokoh = new JRadioButton("Tidak Kokoh");
+		radioButtonTdkKokoh = new JRadioButton("Tidak Kokoh");
 		buttonGroupKokoh.add(radioButtonTdkKokoh);
 		radioButtonTdkKokoh.setBounds(265, 352, 109, 23);
 		add(radioButtonTdkKokoh);
@@ -277,7 +320,37 @@ public class KeadaanRkelas extends JPanel {
 		add(separatorKeamanan);
 		
 		JButton btnSimvan = new JButton("Simvan");
-		btnSimvan.setBounds(236, 398, 152, 23);
+		btnSimvan.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				try {
+	                Kondisi ko = new Kondisi();
+	                Keamanan ke = new Keamanan();
+	                Kebersihan be = new Kebersihan();
+	                ko.setPanjang((int) sliderPanjang.getValue());
+	                ko.setLebar((int) sliderLebar.getValue());
+	                ko.setJmlKursi((int) spinnerJmlKursi.getValue());
+	                ko.setJmlPintu((int) spinnerJmlPintu.getValue());
+	                ko.setJmlJendela((int) spinnerJmlJendela.getValue());
+	                ke.setKunciPintu((int) spinnerkPintu.getValue());
+	                ke.setKunciJendela((int) spinnerkJendela.getValue());
+	                ke.setKeKokohan( radioButtonKokoh.getText());
+	                ke.setKeKokohan( radioButtonTdkKokoh.getName());
+	                be.setSirkulaUdara(radioButtonLancar.getText());
+	                be.setSirkulaUdara(radioButtonTdkLancar.getText());
+	                be.setNilaiCahaya((int) sliderCahaya.getValue());
+	                be.setKeLembapan((int) sliderLembab.getValue());
+	                be.setSuhu((int) sliderSuhu.getValue());
+	                
+	                kond.masukin(ko);
+	                aman.masukin(ke);
+	                keb.masukin(be);
+	                JOptionPane.showMessageDialog(null, "Data Tersimpan");
+	            } catch (SQLException ex) {
+	            	JOptionPane.showMessageDialog(null, ex);
+	            }
+			}
+		});
+		btnSimvan.setBounds(233, 395, 152, 23);
 		add(btnSimvan);
 
 	}

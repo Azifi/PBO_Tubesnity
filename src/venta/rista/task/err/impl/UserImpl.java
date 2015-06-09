@@ -26,8 +26,8 @@ public class UserImpl implements UserInterf {
         ResultSet rs=st.executeQuery("select *from Login");
         User us=new User();
         while(rs.next()){
-            us.setName(rs.getString("nama"));
-            us.setPass(rs.getString("password"));
+            us.setName(rs.getString("Name"));
+            us.setPass(rs.getString("Pass"));
         }
         return us;
 	}

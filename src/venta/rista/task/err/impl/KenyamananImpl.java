@@ -15,7 +15,7 @@ public class KenyamananImpl implements KenyamananInterf{
 	
 	@Override
 	public void masukin(Kenyamanan nyaman) throws SQLException {
-		PreparedStatement ps=sqliteConeken.dbConnector().prepareStatement("insert into inventaris values (?,?,?,?,?)");
+		PreparedStatement ps=sqliteConeken.dbConnector().prepareStatement("insert into Kenyamanan values (?,?,?,?,?)");
 	    ps.setString(1, nyaman.getKeBisingan());
 	    ps.setString(2, nyaman.getBau());
 	    ps.setString(3, nyaman.getBocor());
@@ -28,16 +28,16 @@ public class KenyamananImpl implements KenyamananInterf{
 	@Override
 	public Kenyamanan getKenyamanan() throws SQLException {
 		Statement st=sqliteConeken.dbConnector().createStatement();
-        ResultSet rs=st.executeQuery("select *from kenyamanan");
-        Kenyamanan id=new Kenyamanan();
+        ResultSet rs=st.executeQuery("select * from Kenyamanan");
+        Kenyamanan nam=new Kenyamanan();
         while(rs.next()){
-            id.setKeBisingan(rs.getString("Kebisingan"));
-            id.setBau(rs.getString("Bau"));
-            id.setBocor(rs.getString("Bocor"));
-            id.setKeRusakan(rs.getString("Kerusakan"));
-            id.setKeAusan(rs.getString("AUS"));
+            nam.setKeBisingan(rs.getString("Kebisingan"));
+            nam.setBau(rs.getString("Bau"));
+            nam.setBocor(rs.getString("Bocor"));
+            nam.setKeRusakan(rs.getString("Kerusakan"));
+            nam.setKeAusan(rs.getString("Aus"));
         }
-        return id;
+        return nam;
 	}
 
 }

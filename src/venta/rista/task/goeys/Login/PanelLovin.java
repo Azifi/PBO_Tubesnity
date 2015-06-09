@@ -21,6 +21,9 @@ import venta.rista.task.err.mais.User;
 
 public class PanelLovin extends JPanel {
 	
+	/**
+	 * 
+	 */
 	private JTextField textFieldUser;
 	private JButton buttonLogin;
 	private JPasswordField passwordField;
@@ -33,47 +36,52 @@ public class PanelLovin extends JPanel {
 		setLayout(null);
 		user = new UserImpl();
 		JLabel labelPerintah = new JLabel("Silahkan Login Dahulu");
-		labelPerintah.setBounds(107, 128, 138, 19);
+		labelPerintah.setBounds(68, 104, 138, 19);
 		add(labelPerintah);
 		labelPerintah.setBackground(Color.LIGHT_GRAY);
 		labelPerintah.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		
 		JLabel labelUser = new JLabel("User Name ");
-		labelUser.setBounds(186, 204, 70, 14);
+		labelUser.setBounds(147, 180, 70, 14);
 		add(labelUser);
 		
 		textFieldUser = new JTextField();
 		textFieldUser.setColumns(10);
-		textFieldUser.setBounds(266, 201, 137, 20);
+		textFieldUser.setBounds(227, 177, 137, 20);
 		add(textFieldUser);
 		
 		JLabel labelPass = new JLabel("Password");
-		labelPass.setBounds(186, 235, 70, 14);
+		labelPass.setBounds(147, 211, 70, 14);
 		add(labelPass);
 		
 		passwordField = new JPasswordField();
-		passwordField.setBounds(266, 232, 137, 20);
+		passwordField.setBounds(227, 208, 137, 20);
 		add(passwordField);
 		
 		buttonLogin = new JButton("LOGIN");
-		buttonLogin.setBounds(292, 288, 89, 23);
+		buttonLogin.setBounds(253, 264, 89, 23);
 		buttonLogin.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
-				try{
-					User us = new User();
-	                us.setName(textFieldUser.getText());
-	                us.setPass(passwordField.getText());
-	                user.masukin(us);
-	                textFieldUser.setText("");
-	                passwordField.setText("");
-	                buttonLogin.setText("Login");
-	                
-	                JOptionPane.showMessageDialog(null, "Data Disimpan");
-				}catch(SQLException ex){
-					Logger.getLogger(PanelLovin.class.getName()).log(Level.SEVERE, null, ex);
+				
+				
+					try{
+						User us = new User();
+		                us.setName(textFieldUser.getText());
+					    us.setPass(passwordField.getText());
+		                user.masukin(us);
+		                textFieldUser.setText("");
+		                passwordField.setText("");
+		                textFieldUser.requestFocus();
+		                buttonLogin.setText("Login");
+						JOptionPane.showMessageDialog(null, "username dan password salah, coba lagi");
+						
+						
+					}catch(SQLException ex){
+						//Logger.getLogger(PanelLovin.class.getName()).log(Level.SEVERE, null, ex);
+						ex.printStackTrace();
+					}
 				}
-			}
 			                
 		});
 		add(buttonLogin);

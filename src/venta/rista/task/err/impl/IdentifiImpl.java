@@ -26,7 +26,7 @@ public class IdentifiImpl implements IdentifiInterf {
 	@Override
 	public Identifi getIdentifi() throws SQLException {
 		Statement st=sqliteConeken.dbConnector().createStatement();
-        ResultSet rs=st.executeQuery("select *from inventaris");
+        ResultSet rs=st.executeQuery("select * from inventaris");
         Identifi id=new Identifi();
         while(rs.next()){
             id.setNamaruang(rs.getString("Ruang"));

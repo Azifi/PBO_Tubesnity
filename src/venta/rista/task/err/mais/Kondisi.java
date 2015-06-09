@@ -2,7 +2,7 @@ package venta.rista.task.err.mais;
 
 public class Kondisi {
 	private int Panjang, Lebar, JmlKursi, JmlPintu, JmlJendela;
-	private Double Luas, Rasio;
+	private int Luas, Rasio;
 	
 	public Kondisi(){
 		
@@ -48,20 +48,20 @@ public class Kondisi {
 		JmlJendela = jmlJendela;
 	}
 	
-	public Double getLuas() {
+	public int getLuas() {
 		return Luas;
 	}
 	
-	public void setLuas(Double luas) {
-		Luas = luas;
+	public void setLuas(int luas) {
+		this.Luas = luas;
 	}
 	
-	public Double getRasio() {
+	public int getRasio() {
 		return Rasio;
 	}
 	
-	public void setRasio(Double rasio) {
-		Rasio = rasio;
+	public void setRasio(int rasio) {
+		this.Rasio = rasio;
 	}
 		
 

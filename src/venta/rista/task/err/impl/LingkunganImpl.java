@@ -13,12 +13,14 @@ public class LingkunganImpl implements LingkunganInterf {
 
 	@Override
 	public void masukin(Lingkungan disi) throws SQLException {
-		PreparedStatement ps=sqliteConeken.dbConnector().prepareStatement("insert into kondisi values (?,?,?,?,?)");
+		PreparedStatement ps=sqliteConeken.dbConnector().prepareStatement("insert into Lingkungan values (?,?,?,?,?,?,?)");
 	    ps.setString(1, disi.getKondisiLante());
 	    ps.setString(2, disi.getKondisiDinding());
 	    ps.setString(3, disi.getKondisiAtap());
 	    ps.setString(4, disi.getKondisiJendela());
 	    ps.setString(5, disi.getKondisiPintu());
+	    ps.setString(6, disi.getHotspot());
+	    ps.setString(7, disi.getKonek());
 	    ps.executeUpdate();
 	}
 
@@ -33,6 +35,8 @@ public class LingkunganImpl implements LingkunganInterf {
             is.setKondisiAtap(rs.getString("Atap"));
             is.setKondisiJendela(rs.getString("Jendela"));
             is.setKondisiPintu(rs.getString("Pintu"));
+            is.setHotspot(rs.getString("Hotspot"));
+            is.setKonek(rs.getString("Konek"));
         }
         return is;
 	}

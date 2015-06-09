@@ -13,13 +13,14 @@ public class SaranaImpl implements SaranaInterf {
 
 	@Override
 	public void masukin(Sarana rana) throws SQLException {
-		PreparedStatement ps=sqliteConeken.dbConnector().prepareStatement("insert into sarana values (?,?,?,?,?,?)");
+		PreparedStatement ps=sqliteConeken.dbConnector().prepareStatement("insert into Stop_Kontak values (?,?,?,?,?)");
 	    ps.setInt(1, rana.getJmlSteker());
 	    ps.setInt(2, rana.getJmlKabelLCD());
 	    ps.setInt(3, rana.getJmlLampu());
 	    ps.setInt(4, rana.getJmlKipas());
 	    ps.setInt(5, rana.getJmlAC());
 	    ps.setInt(6, rana.getJmlCCTV());
+	    
 	    ps.executeUpdate();
 		
 	}
@@ -27,17 +28,17 @@ public class SaranaImpl implements SaranaInterf {
 	@Override
 	public Sarana getSarana() throws SQLException {
 		Statement st=sqliteConeken.dbConnector().createStatement();
-        ResultSet rs=st.executeQuery("select *from sarana");
-        Sarana id=new Sarana();
+        ResultSet rs=st.executeQuery("select * from sarana");
+        Sarana na=new Sarana();
         while(rs.next()){
-            id.setJmlSteker(rs.getInt("Steker"));
-            id.setJmlKabelLCD(rs.getInt("LCD"));
-            id.setJmlLampu(rs.getInt("Lampu"));
-            id.setJmlKipas(rs.getInt("Kipas"));
-            id.setJmlAC(rs.getInt("AC"));
-            id.setJmlCCTV(rs.getInt("CCTV"));
+            na.setJmlSteker(rs.getInt("Steker"));
+            na.setJmlKabelLCD(rs.getInt("LCD"));
+            na.setJmlLampu(rs.getInt("Lampu"));
+            na.setJmlKipas(rs.getInt("Kipas"));
+            na.setJmlAC(rs.getInt("AC"));
+            na.setJmlCCTV(rs.getInt("CCTV"));
         }
-        return id;
+        return na;
 	}
 
 }

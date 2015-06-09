@@ -89,11 +89,13 @@ public class TampilinID extends JPanel {
 	                id.setLokasi((String)comboBoxLokasi.getSelectedItem());
 	                id.setGedung((String)comboBoxGedung.getSelectedItem());
 	                id.setFakultas((String)comboBoxFakultas.getSelectedItem());
-	                id.setProdi((String)comboBoxFakultas.getSelectedItem());
+	                id.setProdi((String)comboBoxProdi.getSelectedItem());
 	                iden.masukin(id);
 	                textFieldNamaRuang.setText("");
 	                comboBoxLokasi.getSelectedItem();
-	                buttonSimvan.setText("Login");
+	                comboBoxGedung.getSelectedItem();
+	                comboBoxFakultas.getSelectedItem();
+	                comboBoxProdi.getSelectedItem();
 	                JOptionPane.showMessageDialog(null, "Data User anda Sudah tersimpan, Selamat menikmati Fasilitas Perpustakaan Mini");
 	            } catch (SQLException ex) {
 	                Logger.getLogger(Panel.class.getName()).log(Level.SEVERE, null, ex);

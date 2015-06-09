@@ -2,6 +2,8 @@ package venta.rista.task.err.mais;
 
 public class Lingkungan {
 	private String KondisiLante, KondisiDinding, KondisiAtap, KondisiPintu, KondisiJendela;
+	private String hotspot; 
+	private String Konek;
 
 	public String getKondisiLante() {
 		return KondisiLante;
@@ -42,6 +44,24 @@ public class Lingkungan {
 	public void setKondisiJendela(String kondisiJendela) {
 		this.KondisiJendela = kondisiJendela;
 	}
+
+	public String getHotspot() {
+		return hotspot;
+	}
+
+	public String getKonek() {
+		return Konek;
+	}
+
+	public void setHotspot(String hotspot) {
+		this.hotspot = hotspot;
+	}
+
+	public void setKonek(String konek) {
+		Konek = konek;
+	}
+	
+	
 	
 	
 

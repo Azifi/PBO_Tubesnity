@@ -13,7 +13,7 @@ public class KebersihanImpl implements KebersihanInterf{
 	
 	@Override
 	public void masukin(Kebersihan keb) throws SQLException {
-		PreparedStatement ps=sqliteConeken.dbConnector().prepareStatement("insert into kondisi values (?,?,?,?,?)");
+		PreparedStatement ps=sqliteConeken.dbConnector().prepareStatement("insert into Kebersihan values (?,?,?,?)");
 	    ps.setString(1, keb.getSirkulaUdara());
 	    ps.setInt(2, keb.getNilaiCahaya());	    
 	    ps.setInt(3, keb.getKeLembapan());
@@ -24,15 +24,15 @@ public class KebersihanImpl implements KebersihanInterf{
 	@Override
 	public Kebersihan getKebersihan() throws SQLException {
 		Statement st=sqliteConeken.dbConnector().createStatement();
-        ResultSet rs=st.executeQuery("select *from Kebersihan");
-        Kebersihan ke=new Kebersihan();
+        ResultSet rs=st.executeQuery("select * from Kebersihan");
+        Kebersihan be=new Kebersihan();
         while(rs.next()){
-        	ke.setSirkulaUdara(rs.getString("Sirkulasi Udara"));
-        	ke.setNilaiCahaya(rs.getInt("Nilai cahaya"));
-        	ke.setKeLembapan(rs.getInt("Kelembapan"));
-        	ke.setSuhu(rs.getInt("Suhu"));        	
+        	be.setSirkulaUdara(rs.getString("Sirkula_Udara"));
+        	be.setNilaiCahaya(rs.getInt("Nilai_cahaya"));
+        	be.setKeLembapan(rs.getInt("Kelembapan"));
+        	be.setSuhu(rs.getInt("Suhu"));        	
         }
-        return ke;
+        return be;
 	}
 
 }

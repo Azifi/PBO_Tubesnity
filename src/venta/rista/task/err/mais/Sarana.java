@@ -7,7 +7,7 @@ public class Sarana {
 	public Sarana(){
 		
 	}
-	
+
 	public int getJmlSteker() {
 		return JmlSteker;
 	}

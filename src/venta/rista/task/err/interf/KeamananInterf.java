@@ -6,7 +6,7 @@ import venta.rista.task.err.mais.Keamanan;
 import venta.rista.task.err.mais.Kenyamanan;
 
 public interface KeamananInterf {
-	void masukin(Keamanan aman)throws SQLException; 
+	String masukin(Keamanan aman)throws SQLException; 
 
     Keamanan getKeamanan() throws SQLException;
 }

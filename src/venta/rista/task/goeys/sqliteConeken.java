@@ -11,7 +11,7 @@ public class sqliteConeken {
 		try{
 			Class.forName("org.sqlite.JDBC");
 			connek = DriverManager.getConnection("jdbc:sqlite:Resources\\Rkelas.sqlite");
-			JOptionPane.showMessageDialog(null,"Connection Succesfuled");
+			JOptionPane.showMessageDialog(null,"Connection Succesful");
 			return connek;
 			
 		}catch(Exception e){
